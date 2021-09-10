@@ -32,5 +32,4 @@ public class Circle extends Shape{
 	public String toString() {
 		return "I am a Circle. My radius is " + radius + " and my color is " + this.getColor();
 	}
-
 }

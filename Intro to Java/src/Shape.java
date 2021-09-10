@@ -1,5 +1,5 @@
 
-public class Shape {
+public abstract class Shape { // want the shapes to be a specific type, use "abstract"
 	//Data fields
 	private String color;
 	
@@ -15,5 +15,9 @@ public class Shape {
 	
 	public void setColor(String color) {
 		this.color = color;
+	}
+	
+	public String toString() {
+		return "I am a Shape. My color is " + color + ".";
 	}
 }
