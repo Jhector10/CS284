@@ -12,7 +12,7 @@ public class Search {
 		}
 	
 	public int search(int target) {
-		for (int i = 0; i<x.length; i++) {
+		for (int i = 0; i < x.length ;) {
 			if(x[i]==target)
 				return i;
 		return -1;

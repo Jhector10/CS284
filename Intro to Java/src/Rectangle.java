@@ -3,14 +3,12 @@ public class Rectangle extends Shape{
 	// private means it is only accessible in this class
 	private double width;
 	private double height;
-	private static int numberOfRectangles = 0; 
 	
 	// methods
 	public Rectangle(double width, double height, String color) {
 		super(color);
 		this.width = width;
 		this.height = height;
-		numberOfRectangles++; // increment number by 1 when called
 	}
 	
 	public Rectangle(double width, double height) {
