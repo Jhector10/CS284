@@ -97,7 +97,7 @@ public class BinaryNumber {
 	}
 	
 	public void bitShift(int direction, int amount) {
-		if (direction == -1) {
+		if (direction == 1) {
 			if (amount > this.length || amount < 0) {
 				throw new IndexOutOfBoundsException("The amount entered for the Bit Shift "
 						+ "must be an integer between 0 and the length of the binary number.");
@@ -112,7 +112,7 @@ public class BinaryNumber {
 			length = newArray.length;
 		}
 		
-		else if (direction == 1) {
+		else if (direction == -1) {
 			if (amount > this.length || amount < 0) {
 				throw new IndexOutOfBoundsException("The amount entered for the Bit Shift "
 						+ "must be an integer between 0 and the length of the binary number.");
@@ -218,6 +218,9 @@ public class BinaryNumber {
 	
 	public String toString() {
 		// returns a String of the binary number in memory
+		if (this.length <= 0) {
+			throw new IllegalArgumentException("String has no Binary Number within it.");
+		}
 		
 		String number = "";
 		
@@ -225,7 +228,7 @@ public class BinaryNumber {
 			number += this.data[i];
 		}
 		
-		return "Binary number: " + number;
+		return number;
 	}
 	
 	public int toDecimal() {

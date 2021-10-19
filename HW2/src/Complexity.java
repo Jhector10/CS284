@@ -8,8 +8,12 @@ import java.lang.*;
 
 public class Complexity {
 	
-	public void method0(int n) {
-		int counter =0;
+	public void method0(int n) { 
+		// a method that has time complexity O(n)
+		int counter = 0;
+		if (n < 0) {
+			throw new IllegalArgumentException("Number cannot be less than 0.");
+		}
 		for (int i = 0; i < n; i++) {
 			System.out.println(" Operation "+ counter );
 			counter++;
@@ -19,6 +23,9 @@ public class Complexity {
 	public static void method1(int n) {
 		// a method that has time complexity O(n^2)
 		int counter = 0;
+		if (n < 0) {
+			throw new IllegalArgumentException("Number cannot be less than 0.");
+		}
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
 				System.out.println("Operation: " + counter);
@@ -30,6 +37,9 @@ public class Complexity {
 	public static void method2(int n) {
 		// a method that has time complexity O(n^3)
 		int counter = 0;
+		if (n < 0) {
+			throw new IllegalArgumentException("Number cannot be less than 0.");
+		}
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
 				for (int x = 0; x < n; x++) {
@@ -43,6 +53,9 @@ public class Complexity {
 	public static void method3(int n) {
 		// a method that has time complexity O(log n)
 		int counter = 0;
+		if (n < 0) {
+			throw new IllegalArgumentException("Number cannot be less than 0.");
+		}
 		for (int i = 1; i < n; i *= 2) {
 			System.out.println("Operation: " + counter);
 			counter++;
@@ -52,6 +65,9 @@ public class Complexity {
 	public static void method4(int n) {
 		// a method that has time complexity O(n*log n)
 		int counter = 0;
+		if (n < 0) {
+			throw new IllegalArgumentException("Number cannot be less than 0.");
+		}
 		for (int i = 1; i < n; i *= 2) {
 			for (int j = 0; j < n; j++) {
 				System.out.println("Operation: " + counter);
@@ -63,10 +79,30 @@ public class Complexity {
 	public static void method5(int n) {
 		// a method that has time complexity O(log (log n))
 		int counter = 0;
+		if (n < 0) {
+			throw new IllegalArgumentException("Number cannot be less than 0.");
+		}
 		for (int i = n; i > 2; i /= Math.sqrt(i)) {
 			System.out.println("Operation: " + counter);
 			counter++;
 		}
+	}
+	
+	public static int method6(int n) {
+		int counter = 0;
+		if (n < 0) {
+			throw new IllegalArgumentException("Number cannot be less than 0.");
+		}
+    
+	    if (n == 0) {
+	    	counter = 1;
+	        return counter;
+	    }
+	    
+	    else {
+	    	counter = 2 * method6(n - 1);
+	        return counter;
+	    }
 	}
 
 	public static void main(String[] args) {
