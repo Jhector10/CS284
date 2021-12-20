@@ -22,6 +22,10 @@ public class BinaryNumber {
 	public BinaryNumber(String str) {
 		// given a binary number, the corresponding binary number is created
 		
+		if (str.length() <= 0) {
+			throw new IllegalArgumentException("String has no Binary Number within it.");
+		}
+		
 		this.length = str.length();
         this.data = new int[this.length];
 
@@ -126,6 +130,11 @@ public class BinaryNumber {
 			data = newArray;
 			length = newArray.length;
 		} 
+		
+		else if (amount > this.getLength()) {
+			throw new IndexOutOfBoundsException("The amount must be less than the Binary "
+					+ "Number");
+		}
 		
 		else if (amount < 0) {
 			throw new IndexOutOfBoundsException("The amount must be more than greater "
